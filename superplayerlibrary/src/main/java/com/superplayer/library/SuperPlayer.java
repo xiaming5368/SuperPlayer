@@ -753,6 +753,9 @@ public class SuperPlayer extends RelativeLayout{
 			// 注册网路变化的监听
 			registerNetReceiver();
 		}
+		if(videoView!=null){
+			release();
+		}
 		if (isNetListener
 				&& (NetUtils.getNetworkType(activity) == 2 || NetUtils
 				.getNetworkType(activity) == 4)) {// 手机网络的情况下

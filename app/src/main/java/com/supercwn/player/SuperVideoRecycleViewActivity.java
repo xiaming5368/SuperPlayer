@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.supercwn.player.adapter.SuperVideoAdapter;
 import com.supercwn.player.bean.VideoListBean;
@@ -83,7 +84,6 @@ public class SuperVideoRecycleViewActivity extends Activity {
 
                 postion = position;
                 if (player.getVideoStatus() == IjkVideoView.STATE_PAUSED) {
-
                     if (position != lastPostion) {
                         player.stopPlayVideo();
                         player.release();
@@ -99,6 +99,7 @@ public class SuperVideoRecycleViewActivity extends Activity {
                 player.showView(R.id.adapter_player_control);
                 frameLayout.addView(player);
                 player.play(dataList.get(position).getVideoUrl());
+                Toast.makeText(SuperVideoRecycleViewActivity.this, "position:"+position, Toast.LENGTH_SHORT).show();
                 lastPostion = position;
             }
         });
