@@ -7,12 +7,6 @@
 ![change](https://github.com/supercwn/SuperPlayer/blob/master/gif/super_player2.gif)
 ![change](https://github.com/supercwn/SuperPlayer/blob/master/gif/super_player3.gif)
 
-#How to User#
-
-gradle
-
-	ps：还有时间上传到maven，过几天在上传上去，喜欢的可以直接Clone or download
-
 #视频点播(直播)功能(播放网络视频，或者视频直播)#
 设置视频源(视频地址)是否是直播还是点播
 	
