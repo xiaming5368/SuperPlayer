@@ -95,6 +95,7 @@ public class SuperVideoDetailsActivity extends AppCompatActivity implements View
                 }).setTitle(url)//设置视频的titleName
                 .play(url);//开始播放视频
         player.setScaleType(SuperPlayer.SCALETYPE_FITXY);
+        player.setPlayerWH(0,player.getMeasuredHeight());//设置竖屏的时候屏幕的高度，如果不设置会切换后按照16:9的高度重置
     }
 
     @Override
