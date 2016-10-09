@@ -1516,7 +1516,7 @@ public class SuperPlayer extends RelativeLayout {
     /**
      * 设置了竖屏的时候播放器的宽高
      * @param width 0：默认是屏幕的宽度
-     * @param height 0：默认是屏幕的高度
+     * @param height 0：默认是宽度的16:9
      * @return
      */
     public SuperPlayer setPlayerWH(int width, int height) {
