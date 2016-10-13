@@ -224,11 +224,11 @@ public class SuperPlayer extends RelativeLayout {
         $.id(R.id.view_jky_player_center_control).visibility(
                 isShowCenterControl ? View.VISIBLE : View.GONE);
         if (videoView.isPlaying()) {
-            $.id(R.id.app_video_play).image(R.drawable.ic_pause);
+            $.id(R.id.app_video_play).image(R.drawable.jky_video_pause);
             $.id(R.id.view_jky_player_center_play).image(
                     R.drawable.ic_center_pause);
         } else {
-            $.id(R.id.app_video_play).image(R.drawable.ic_play);
+            $.id(R.id.app_video_play).image(R.drawable.jky_video_play);
             $.id(R.id.view_jky_player_center_play).image(
                     R.drawable.ic_center_play);
         }
@@ -991,11 +991,11 @@ public class SuperPlayer extends RelativeLayout {
     private void updateFullScreenButton() {
         if (getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {// 全屏幕
             $.id(R.id.view_jky_player_fullscreen).image(
-                    R.drawable.ic_not_fullscreen);
+                    R.drawable.jky_video_shrink);
             $.id(R.id.view_jky_player_iv_share).gone();
             $.id(R.id.view_jky_play_iv_setting).visible();
         } else {
-            $.id(R.id.view_jky_player_fullscreen).image(R.drawable.ic_enlarge);
+            $.id(R.id.view_jky_player_fullscreen).image(R.drawable.jky_video_expand);
             $.id(R.id.view_jky_player_iv_share).visible();
             $.id(R.id.view_jky_play_iv_setting).gone();
         }
