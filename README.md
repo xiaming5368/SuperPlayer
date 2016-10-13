@@ -7,6 +7,22 @@
 ![change](https://github.com/supercwn/SuperPlayer/blob/master/gif/super_player2.gif)
 ![change](https://github.com/supercwn/SuperPlayer/blob/master/gif/super_player3.gif)
 
+以下是我的配置，在app的build.gradle里面添加jitpack：
+```gradle
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+##Gradle
+
+```gradle
+dependencies {
+    compile 'com.github.xiaming5368.SuperPlayer:superplayerlibrary:v1.0.0'
+}
+```
+
 #视频点播(直播)功能(播放网络视频，或者视频直播)#
 设置视频源(视频地址)是否是直播还是点播
 	
