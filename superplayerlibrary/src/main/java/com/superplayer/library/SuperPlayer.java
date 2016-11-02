@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.OrientationEventListener;
@@ -198,6 +199,11 @@ public class SuperPlayer extends RelativeLayout {
 
     public SuperPlayer setTitle(CharSequence title) {
         $.id(R.id.app_video_title).text(title);
+        return this;
+    }
+
+    public SuperPlayer setTitleSize(float titleSize) {
+        $.id(R.id.app_video_title).textSize(titleSize);
         return this;
     }
 
@@ -1115,6 +1121,13 @@ public class SuperPlayer extends RelativeLayout {
         public Query text(CharSequence text) {
             if (view != null && view instanceof TextView) {
                 ((TextView) view).setText(text);
+            }
+            return this;
+        }
+
+        public Query textSize(float textSize) {
+            if (view != null && view instanceof TextView) {
+                ((TextView) view).setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
             }
             return this;
         }
