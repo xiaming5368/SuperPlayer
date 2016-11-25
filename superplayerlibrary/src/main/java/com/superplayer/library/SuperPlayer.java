@@ -29,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.superplayer.library.mediaplayer.IRenderView;
 import com.superplayer.library.mediaplayer.IjkVideoView;
@@ -118,6 +119,8 @@ public class SuperPlayer extends RelativeLayout {
     private NetChangeReceiver netChangeReceiver;
     private OnNetChangeListener onNetChangeListener;
 
+    private OnShareListener onShareListener;
+
     private OrientationEventListener orientationEventListener;
     private int defaultTimeout = 3000;
     private int screenWidthPixels;
@@ -167,6 +170,8 @@ public class SuperPlayer extends RelativeLayout {
                 isNetListener = false;// 取消网络的监听
                 $.id(R.id.view_jky_player_tip_control).gone();
                 play(url, currentPosition);
+            } else if(v.getId() == R.id.view_jky_player_iv_share) {
+                onShareListener.onShare(v);
             }
         }
     };
@@ -467,6 +472,7 @@ public class SuperPlayer extends RelativeLayout {
         $.id(R.id.app_video_finish).clicked(onClickListener);
         $.id(R.id.view_jky_player_center_play).clicked(onClickListener);
         $.id(R.id.view_jky_player_tv_continue).clicked(onClickListener);
+        $.id(R.id.view_jky_player_iv_share).clicked(onClickListener);
 
         audioManager = (AudioManager) activity
                 .getSystemService(Context.AUDIO_SERVICE);
@@ -1390,6 +1396,11 @@ public class SuperPlayer extends RelativeLayout {
         return this;
     }
 
+    public SuperPlayer setOnShareListsner(OnShareListener onShareListsner) {
+        this.onShareListener = onShareListsner;
+        return this;
+    }
+
     /**
      * set is live (can't seek forward)
      *
@@ -1442,6 +1453,10 @@ public class SuperPlayer extends RelativeLayout {
 
         // 网路不可用
         void onNoAvailable();
+    }
+
+    public interface OnShareListener {
+        void onShare(View v);
     }
 
     /*********************************

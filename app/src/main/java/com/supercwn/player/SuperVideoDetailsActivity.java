@@ -16,7 +16,7 @@ import com.superplayer.library.SuperPlayer;
  * @author Super南仔
  * @time 2016-9-19
  */
-public class SuperVideoDetailsActivity extends AppCompatActivity implements View.OnClickListener, SuperPlayer.OnNetChangeListener {
+public class SuperVideoDetailsActivity extends AppCompatActivity implements View.OnClickListener, SuperPlayer.OnNetChangeListener, SuperPlayer.OnShareListener {
 
     private SuperPlayer player;
     private boolean isLive;
@@ -62,6 +62,7 @@ public class SuperVideoDetailsActivity extends AppCompatActivity implements View
         }
         player.setNetChangeListener(true)//设置监听手机网络的变化
                 .setOnNetChangeListener(this)//实现网络变化的回调
+                .setOnShareListsner(this)  // 分享
                 .onPrepared(new SuperPlayer.OnPreparedListener() {
                     @Override
                     public void onPrepared() {
@@ -93,6 +94,7 @@ public class SuperVideoDetailsActivity extends AppCompatActivity implements View
 
                     }
                 }).setTitle(url)//设置视频的titleName
+                .setTitleSize(15)
                 .play(url);//开始播放视频
         player.setScaleType(SuperPlayer.SCALETYPE_FITXY);
         player.setPlayerWH(0,player.getMeasuredHeight());//设置竖屏的时候屏幕的高度，如果不设置会切换后按照16:9的高度重置
@@ -150,6 +152,10 @@ public class SuperVideoDetailsActivity extends AppCompatActivity implements View
         Toast.makeText(this,"无网络链接",Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void onShare(View v) {
+        Toast.makeText(this,"点击分享...",Toast.LENGTH_SHORT).show();
+    }
 
     /**
      * 下面的这几个Activity的生命状态很重要

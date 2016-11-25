@@ -49,7 +49,7 @@
         android:layout_toRightOf="@+id/app_video_finish"
         android:ellipsize="marquee"
         android:padding="10dp"
-        android:singleLine="true"
+        android:maxLines="1"
         android:text="这是个标题"
         android:textColor="@android:color/white"
         android:textSize="12sp"
