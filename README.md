@@ -19,7 +19,7 @@ allprojects {
 
 ```gradle
 dependencies {
-    compile 'com.github.xiaming5368.SuperPlayer:superplayerlibrary:v1.0.0'
+    compile 'com.github.xiaming5368.SuperPlayer:superplayerlibrary:v1.0.2'
 }
 ```
 
