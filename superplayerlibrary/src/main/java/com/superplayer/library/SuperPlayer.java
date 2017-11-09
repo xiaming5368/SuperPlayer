@@ -111,7 +111,7 @@ public class SuperPlayer extends RelativeLayout {
     private boolean isLive = false;// 是否为直播
     private boolean isShowCenterControl = false;// 是否显示中心控制器
     private boolean isHideControl = false;//是否隐藏视频控制栏
-    private boolean isShowTopControl = true;//是否显示头部显示栏，true：竖屏也显示 false：竖屏不显示，横屏显示
+    private boolean isShowTopControl = false;//是否显示头部显示栏，true：竖屏也显示 false：竖屏不显示，横屏显示
     private boolean isSupportGesture = false;//是否至此手势操作，false ：小屏幕的时候不支持，全屏的支持；true : 小屏幕还是全屏都支持
     private boolean isPrepare = false;// 是否已经初始化播放
     private boolean isNetListener = true;// 是否添加网络监听 (默认是监听)
@@ -1005,11 +1005,12 @@ public class SuperPlayer extends RelativeLayout {
             $.id(R.id.view_jky_player_fullscreen).image(
                     R.drawable.jky_video_shrink);
             $.id(R.id.view_jky_player_iv_share).gone();
-            $.id(R.id.view_jky_play_iv_setting).visible();
+            $.id(R.id.view_jky_play_iv_setting).gone();
         } else {
             $.id(R.id.view_jky_player_fullscreen).image(R.drawable.jky_video_expand);
-            $.id(R.id.view_jky_player_iv_share).visible();
-            $.id(R.id.view_jky_play_iv_setting).gone();
+//            $.id(R.id.view_jky_player_iv_share).visible();
+//            $.id(R.id.view_jky_play_iv_setting).gone();
+            showTopControl(false);
         }
     }
 
